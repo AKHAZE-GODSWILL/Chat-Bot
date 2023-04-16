@@ -33,6 +33,16 @@ function typeText(element, text) {
     }, 20)
 }
 
+function speech(text){
+    let speech = new SpeechSynthesisUtterance();
+    speech.rate = 1;
+    speech.pitch = 1;
+    speech.volume = 1;
+    speech.voice = speechSynthesis.getVoices()[0];
+    speech.text = text;
+    speechSynthesis.speak(speech);
+}
+
 // generate unique ID for each message div of bot
 // necessary for typing text effect for that specific reply
 // without unique ID, typing text will work on every element
@@ -86,7 +96,7 @@ const handleSubmit = async(e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('https://myegbon-server.onrender.com/', {
+    const response = await fetch('https://docjosh.onrender.com/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -106,6 +116,7 @@ const handleSubmit = async(e) => {
 
 
         typeText(messageDiv, parsedData)
+        speech(parsedData);
     } else {
         const err = await response.text()
 
