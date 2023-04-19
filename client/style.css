@@ -7,13 +7,13 @@
 }
 
 body {
-    background: red;
+    background: rgb(0, 153, 255);
 }
 
 #app {
     width: 100vw;
     height: 100vh;
-    background: red;
+    background: rgb(2, 57, 94);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +47,7 @@ body {
 }
 
 .ai {
-    background: brown;
+    background: rgb(2, 47, 77);
 }
 
 .chat {
@@ -109,7 +109,7 @@ form {
     max-width: 1280px;
     margin: 0 auto;
     padding: 10px;
-    background: brown;
+    background: rgb(2, 47, 77);
     display: flex;
     flex-direction: row;
     gap: 10px;
